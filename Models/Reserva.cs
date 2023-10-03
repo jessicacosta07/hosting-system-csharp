@@ -29,7 +29,7 @@ namespace hosting_system_csharp.Models
             else
             {
                 // TODO: Retornar uma exception caso a capacidade seja menor que o número de hóspedes recebido
-                throw new Exception($"A quantidade de hóspedes não pode exceder a capacidade da suíte");
+                throw new Exception("A quantidade de hóspedes não pode exceder a capacidade da suíte");
             }
         }
 
