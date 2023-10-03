@@ -22,8 +22,7 @@ namespace hosting_system_csharp.Models
         {
             // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
             int numeroHospedes = hospedes.Count();
-            bool verificaCapacidade = Suite.Capacidade >= numeroHospedes;
-            if (verificaCapacidade)
+            if (Suite.Capacidade >= numeroHospedes)
             {
                 Hospedes = hospedes;
             }
@@ -42,8 +41,7 @@ namespace hosting_system_csharp.Models
         public int ObterQuantidadeHospedes()
         {
             // TODO: Retorna a quantidade de hóspedes (propriedade Hospedes)
-            int quantidade = Hospedes.Count();
-            return quantidade;
+            return Hospedes.Count();
         }
 
         public decimal CalcularValorDiaria()
@@ -53,11 +51,9 @@ namespace hosting_system_csharp.Models
             decimal valor = DiasReservados * Suite.ValorDiaria;
 
             // Regra: Caso os dias reservados forem maior ou igual a 10, conceder um desconto de 10%
-            bool desconto = DiasReservados >= 10;
-            if (desconto)
+            if (DiasReservados >= 10)
             {
-                decimal porcentagemDesconto = 0.1M;
-                decimal valorDesconto = valor * porcentagemDesconto;
+                decimal valorDesconto = valor * 0.1M;
                 valor -= valorDesconto;
             }
 
